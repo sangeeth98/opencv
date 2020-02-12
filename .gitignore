@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# added by sangeeth
+# ignore avi files
+*.avi

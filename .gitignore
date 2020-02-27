@@ -131,3 +131,6 @@ dmypy.json
 # added by sangeeth
 # ignore avi files
 *.avi
+
+# ignore .vs folder
+.vs

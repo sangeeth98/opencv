@@ -1,9 +1,10 @@
 import time
-import psutil
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
 from itertools import count
+
 import matplotlib as mpl
+import matplotlib.pyplot as plt
+import psutil
+from matplotlib.animation import FuncAnimation
 
 # plt.rcParams['animation.html'] = 'jshtml'
 
@@ -12,17 +13,17 @@ i , x, y = 0, [], []
 index = count()
 
 plt.style.context('dark_background')
-mpl.rc('lines',linewidth=4, color='k', marker='o',
-      markerfacecolor='c', markeredgecolor='g',
-      markeredgewidth=1, markersize=5,
-      antialiased=True)
+# mpl.rc('lines',linewidth=4, color='k', marker='o',\
+#     markerfacecolor='c', markeredgecolor='g',\
+#     markeredgewidth=1, markersize=5,\
+#     antialiased=True)
 
 def animate(i):
     x.append(next(index))
     y.append(psutil.cpu_percent())
 
     plt.cla()
-    plt.plot(x, y, color='r', linewidth=2, marker='o', linestyle=':')
+    plt.plot(x, y, color='b')
     plt.xlim(index.__reduce__()[1][0]-80, index.__reduce__()[1][0]+20)
     # plt.set_xlim(left=max(0,i-50), right=i+50)
     i+=1

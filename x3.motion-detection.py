@@ -19,7 +19,6 @@ def distMap(frame1, frame2):
     diff32 = np.float32(frame1) - np.float32(frame2)
     return np.uint8((np.sqrt(diff32[:,:,0]**2 + diff32[:,:,1]**2 + diff32[:,:,2]**2)/441.673)*255)
 
-
 cv2.namedWindow('frame')
 cv2.namedWindow('dist')
 
@@ -34,9 +33,8 @@ count_temp=0
 while True:
     _, frame3 = cap.read()
     rows, cols, _ = np.shape(frame3)
-    cv2.imshow('dist', frame3)
+    # cv2.imshow('dist', frame3)
     dist = distMap(frame1, frame3)
-
     frame1 = frame2
     frame2 = frame3
 

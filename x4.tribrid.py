@@ -2,6 +2,7 @@ import cv2, pickle, argparse, time, copy, datetime
 import face_recognition
 import numpy as np
 from firebase import firebase 
+from imutils.video import FPS
 
 # initialize firebase url
 firebase = firebase.FirebaseApplication('https://capstone-prototype-7b1f9.firebaseio.com/', None)
@@ -33,6 +34,8 @@ _, frame2 = cap.read()
 
 time1 = time.time()
 activity_count = 0
+
+fps = FPS().start()
 # Main Loop
 while(True):
     
